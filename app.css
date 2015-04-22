@@ -1,0 +1,51 @@
+#game {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 800px;
+    height: 480px;
+    margin: 0 auto;
+    background: url("img/background.png");
+}
+
+#start{
+    position: absolute;
+    height: 50px;
+    width: 200px;
+    top: 50%;
+    left: 300px;
+    background-color: pink;
+    border: 2px dashed #FFF;
+    font-size: 24px;
+}
+
+#score {
+    display: none;
+    position: absolute;
+    line-height: 65px;
+    height: 65px;
+    width: 125px;
+    text-align: center;
+    font-size: 36px;
+    top: 5px;
+    left: 275px;
+    background-color: #FFF;
+    border-radius: 40px 50px 60px 70px;
+}
+
+#timer {
+    display: none;
+    position: absolute;
+    height: 60px;
+    width: 60px;
+    border-radius: 30px;
+    top: 5px;
+    left: 455px;
+    background-color: #FFF;
+    border: 5px solid red;
+    text-align: center;
+    line-height: 60px;
+    font-size: 36px;
+}
