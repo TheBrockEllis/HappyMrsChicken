@@ -19,10 +19,16 @@ App.total_score = 0;
 //Has this game been started yet?
 App.started = 0;
 
+App.MRS_CHICKEN_WIDTH = 121;
+App.MRS_CHICKEN_HEIGHT = 119;
+
 //Init our Happy Mrs. Chicken
-App.mrschicken = new Image("img/mrschicken.png");
-App.mrschicken.width = 121;
-App.mrschicken.height = 119;
+App.mrschicken = new Image();
+App.mrschicken.src = "img/mrschicken.png";
+App.mrschicken.id = "mrschicken";
+App.mrschicken.width = App.MRS_CHICKEN_WIDTH;
+App.mrschicken.height = App.MRS_CHICKEN_HEIGHT;
+document.getElementById("game").appendChild(App.mrschicken);
 
 //array of Eggs
 App.eggs = [];
@@ -39,6 +45,7 @@ App.init = function(){
         if(App.started == 1){
             if(e.keyCode == 13){
                 App.update_score(App.points);    
+                App.move_chicken();
             }
         }
     });
@@ -69,7 +76,21 @@ App.toggle_elements = function(){
 };
 
 App.move_chicken = function(){
+    //find playable area
+    var x = 800 - App.MRS_CHICKEN_WIDTH;
+    var y = 240 - App.MRS_CHICKEN_WIDTH;
+
+    //calculate random x and y position
+    x = Math.floor(Math.random() * x) + "px"; 
+    y = 240 + Math.floor(Math.random() * y) + "px"; 
+
     
+    console.log(x);
+    console.log(y);
+    //move image to that location
+
+    console.log("Moving chicken");
+    $("#mrschicken").css("top", y).css("left", x);    
 };
 
 //call this method every time the space bar is pressed
